@@ -1,0 +1,34 @@
+### GetAll Todos
+GET http://localhost:9000/ HTTP/1.1
+
+### Create a Todo
+POST http://localhost:9000/ HTTP/1.1
+
+{
+    "title": "my first TODO",
+    "description": "my fist description to my first TODO",
+    "done": false
+}
+
+### Create a Todo testing if DB's "done" default is working
+POST http://localhost:9000/ HTTP/1.1
+
+{
+    "title": "my second TODO",
+    "description": "my second description"
+}
+
+### Get only one Todo
+GET http://localhost:9000/2 HTTP/1.1
+
+### PUT to change already existing Todos 
+PUT http://localhost:9000/1 HTTP/1.1
+
+{
+    "title": "This TODO changed!",
+    "description": "This is another description",
+    "done": true
+}
+
+###DELETE Todo based on the provided ID
+DELETE http://localhost:9000/2 HTTP/1.1
