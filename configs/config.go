@@ -30,7 +30,7 @@ func init() {
 
 // This function will attempt to load the config, returns error otherwise
 func Load() error {
-	viper.SetConfigName("config")
+	viper.SetConfigName("config-docker")
 	//could be other types too, like JSON
 	viper.SetConfigType("toml")
 	//Always with the binary

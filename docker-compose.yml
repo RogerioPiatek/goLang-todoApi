@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   postgresql:
-    container_name: api-todo
+    container_name: todo-db
     image: postgres:latest
     ports:
       - "5432:5432"
@@ -10,3 +10,17 @@ services:
       POSTGRES_PASSWORD: "1234"
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - todonetwork
+  api:
+    container_name: todo-api
+    depends_on:
+      - postgresql
+    ports:
+      - "9000:9000"
+    build: ./
+    networks:
+      - todonetwork
+networks:
+  todonetwork:
+    name: todonetwork
