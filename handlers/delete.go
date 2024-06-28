@@ -10,8 +10,8 @@ import (
 )
 
 /*
-HTTP endpoint responsible to call Update.
-This will change the Todo based on the URL's ID parameter
+HTTP endpoint responsible to call Delete.
+This will Delete the Todo based on the URL's ID parameter
 */
 func Delete(w http.ResponseWriter, r *http.Request) {
 	//every URL parameter comes as string, here it's converted to Int
